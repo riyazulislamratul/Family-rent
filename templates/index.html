@@ -1,0 +1,23 @@
+<h2>Family Records</h2>
+
+<a href="/add">Add New</a> | 
+<a href="/logout">Logout</a>
+
+<table border="1">
+<tr>
+  <th>Name</th>
+  <th>Amount</th>
+  <th>Date</th>
+  <th>Action</th> </tr>
+
+{% for row in data %}
+<tr>
+  <td>{{row[1]}}</td>
+  <td>{{row[2]}}</td>
+  <td>{{row[3]}}</td>
+  <td>
+    <a href="/delete/{{row[0]}}" onclick="return confirm('আপনি কি নিশ্চিত?')">Delete</a>
+  </td>
+</tr>
+{% endfor %}
+</table>
